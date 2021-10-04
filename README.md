@@ -1,6 +1,8 @@
-# Overlay Menu
+# OverlayMenu
 
-### Example
+This module is to create an overlay type of menus with an auto cancellation feature. You can create your own menu design and then just wrap that menu with this OverlayMenu component and pass the values `visible, setVisible` state and `container_ref` this will be ref to your menu container to work auto-cancel feature properly.
+
+### Here is code example:
 
 ```js
 import OverlayMenu from "overlaymenu";
@@ -31,3 +33,11 @@ function App() {
 
 export default App;
 ```
+
+### Menu created with overlaymenu
+
+![Overlaymeu Example](./overlaymenu.gif)
+
+> You can create your custom modal, menu, dropdowns, and more with this module.
+
+> Overlaymenu will be disappeared if you click outside of the menu or press the ESC key on the keyboard.

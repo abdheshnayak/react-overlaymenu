@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
+import PropTypes from "prop-types";
 
-function OverlayMenu({ visible, setVisible, container_ref, children }) {
+const OverlayMenu = ({ visible, setVisible, container_ref, children }) => {
   const handleClickOutside = (event) => {
     if (
       container_ref.current &&
@@ -28,6 +29,20 @@ function OverlayMenu({ visible, setVisible, container_ref, children }) {
       {visible && <React.Fragment>{children}</React.Fragment>}
     </React.Fragment>
   );
+};
+
+if (process.env.NODE_ENV !== "production") {
+  OverlayMenu.propTypes = {
+    visible: PropTypes.bool,
+    setVisible: PropTypes.func,
+    container_ref: PropTypes.object,
+    children: PropTypes.node.isRequired,
+  };
 }
+
+OverlayMenu.defaultProps = {
+  visible: true,
+  setVisible: () => {},
+};
 
 export default OverlayMenu;
